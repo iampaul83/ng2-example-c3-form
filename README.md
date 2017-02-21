@@ -13,6 +13,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+```bash
+# build for docs/ -->  base-href for github page, production mode, AOT(see https://angular.io/docs/ts/latest/cookbook/aot-compiler.html)
+ng build --base-href "/ng2-example-c3-form/" -prod -aot
+```
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
