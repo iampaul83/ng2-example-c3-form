@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <form (ngSubmit)="onSubmit(dataForm)" #dataForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="num">Num</label>
+          <input type="text" class="form-control" id="num" autocomplete="off"
+                 #numInput="ngModel"
+                 (focus)="onFocus()" (blur)="onBlur()"
+                 required [(ngModel)]="input" name="num" pattern="^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$">
+          <div class="alert alert-danger"
+               [hidden]="(numInput.valid || numInput.pristine) || !isFocus">
+            請輸入數字
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <ol class="num-list">
+        <li *ngFor="let d of data; let i = index">
+          <button (click)="deleteNum(i)">{{d}}</button> 
+        </li>
+      </ol>
+    </div>
+    <div class="col-xs-6">
+      <div id="c3-test3"></div>
+    </div>
+  </div>
+</div>
